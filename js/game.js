@@ -5,7 +5,7 @@ Game = {
         // This comes out to a screen size of 640x480
         Crafty.init(640, 480);
         // Set the screens background to Micah's favorite color
-        Crafty.background('blue');
+        Crafty.background('black');
 
         // Start the Loading scene.
         Crafty.scene('Loading');
