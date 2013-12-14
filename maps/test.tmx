@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="40" height="30" tilewidth="16" tileheight="16">
- <tileset firstgid="1" name="terrain_atlas" tilewidth="16" tileheight="16">
-  <image source="../../../Projects/games/art/Atlas_0/terrain_atlas.png" width="1024" height="1024"/>
+ <tileset firstgid="1" name="test_terrain" tilewidth="16" tileheight="16">
+  <image source="../img/test_terrain.png" width="1024" height="1024"/>
  </tileset>
  <layer name="background" width="40" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3VOwqAMBAE0C1MOhvvZeO94if3yFH8nsgBW0E02agwgUcgRRhmiw2FSABnRFroHuhhAG+OvzSM+Dv2bIr5Shufr7J6+eoE+XzmfAveZ7wv9vpeYVPMdzZfzXml6K/5UD72x/7Y33/7cyf5NPfBXSOyTBn3ARERERG9Ywcn0Ju1wBIAAA==
+   H4sIAAAAAAAAA+3DMQ0AAAwDoP6TXeO1sQMSeklVVVVV9ekBF+ySA8ASAAA=
   </data>
  </layer>
  <layer name="ground" width="40" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+2WTQ6CMBBGu1N+hGMphXspyr0A9VB+DTVpXI1MpqvvJS9NFwwvhUWdI4QQQsiXQ+PcERawjOs/hmcqWDc2fWfMvcAO+rh2yV5iDwejvivm3uAI73Edk73EB5wy9q3Rp9AXfBv1zZi7JD2hr2g3S6EVrNs8feEs/An/H97nhfZwyNhn9a32wD4d7NPBPh3s08E+Hb/3F8u70h5ynd8H3gjYh8ASAAA=
+   H4sIAAAAAAAAA+3BMQEAAADCoPVPbQ0PoAAAAADg1wAW4j6/wBIAAA==
   </data>
  </layer>
  <layer name="collision" width="40" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+2Vuw3CMABEr0mKFDEsFmCxJJ4DRuCzAZ85YAQgXIOQQETEJraLe9KTSz+dCwMv6gxoHGypzTA6e95xcPBITwH6yhwwDk7oNB+/r+Idszcb2v5w2gh9qVEGfq+hPPeb00WCfdrPD+3nh/bzow78HwgxhGUBrIrYFd85s+2ScJ8Q4r+sDbChW7ozsWs+ubLpRu+0S7BPiD4eq+M3S8ASAAA=
+   H4sIAAAAAAAAA+3WpxHDUBRE0UckKuDYl2NfisU4FKFYjByukYChwH8e7505fOGaqX8pjcwy5ChQoopCr5qq2dKgRYceg6N9i9hsiRXW2GAbh141tWPLHgccccLZ0b6ULRlyFChROdpXs6VBiw49Bkf7lFLKU5fE7Iob7knoNd+NbHrgiZfDfUp90jefl775vPTN1S/2BhBkDNnAEgAA
   </data>
  </layer>
  <layer name="overlay" width="40" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3OxxGAMBTEUFcABRkwfRFMX8S+iOLkChj+YTXz7nJOKaWUUkopZSGfOVegRIWAOvv7KtXw0qJDj4jB0N/Iy4QZC1Zshv52Xg6cuHC/b/nfVynPS4ESFQJqQ38NLy069IgYDP0ppb7tAb64m87AEgAA
+   H4sIAAAAAAAAA+3OuRGAIAAFUSrAglChL/Hoy7MvzzWyAyH4O/PyNUYppZT6N2eNKVGhhkewqa++Gl4iWnToMWT0N/IyYcaCFVtGfzsvB05cuN+3IvXVl+OlRIUaHiGjv4aXiBYdegwZ/SmllFJKpegBCvv0lsASAAA=
   </data>
  </layer>
 </map>
