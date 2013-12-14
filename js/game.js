@@ -6,5 +6,8 @@ Game = {
         Crafty.init(640, 480);
         // Set the screens background to Micah's favorite color
         Crafty.background('blue');
+
+        // Start the Loading scene.
+        Crafty.scene('Loading');
     }
 }
