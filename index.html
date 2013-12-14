@@ -8,11 +8,13 @@
         <script src="js/create_mocks_module.js"></script>
         <script src="js/tiledmapbuilder.js"></script>
         <script>
-            window.log = function() {
-                if (this.console) {
-                    console.log(Array.prototype.slice.call(arguments));
+            
+            if (typeof console === "undefined") {
+                console = {};
+                if (typeof console.log === "undefined") {
+                    console.log = function(){};
                 }
-            };
+            }
 
             if (window.addEventListener) {
                 window.addEventListener("load", Game.start, false);
