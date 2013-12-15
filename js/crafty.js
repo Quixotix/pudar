@@ -4518,18 +4518,26 @@ Crafty.c("Multiway", {
     _enterframe: function () {
         if (this.disableControls) return;
 
+        var factor = 1;
+
+        if (this._movement.x !== 0 && this._movement.y !== 0) {
+            factor = 0.7;
+        }
+
         if (this._movement.x !== 0) {
-            this.x += this._movement.x;
+            var x = Math.round(this._movement.x * factor);
+            this.x += x;
             this.trigger('Moved', {
-                x: this.x - this._movement.x,
+                x: this.x - x,
                 y: this.y
             });
         }
         if (this._movement.y !== 0) {
-            this.y += this._movement.y;
+            var y = Math.round(this._movement.y * factor);
+            this.y += y
             this.trigger('Moved', {
                 x: this.x,
-                y: this.y - this._movement.y
+                y: this.y - y
             });
         }
     },
