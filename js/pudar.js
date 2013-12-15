@@ -80,7 +80,8 @@ var Pudar = {
 
             // poll for assets and map to be loaded
             var timerId = setInterval(function() {
-                if ((scene.assets && assetsLoaded) && (scene.map && mapLoaded)) {
+                if ((scene.assets && assetsLoaded) &&
+                    (scene.map && mapLoaded)) {
                     console.log(scene.name + ": Loading complete.");
                     Crafty.scene(scene.name);
                     clearInterval(timerId);

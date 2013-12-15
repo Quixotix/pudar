@@ -12,18 +12,17 @@ Crafty.scene('Game', function() {
     // Show current item
     var itemDisplay = Crafty.e('ItemDisplay');
     itemDisplay
-        .attr({z: 9})
+        .attr({z: 10})
         .fixedPosition(Crafty.viewport.width - (TILE_SIZE + HUD_PADDING),
                        HUD_PADDING);
 
     Crafty.sprite(32, 'img/sprites.png', {
-        spr_no_item: [0, 0],
-        spr_player: [1, 0],
-        spr_sword: [2, 0]
+        NoItemSprite: [0, 0],
+        SwordSprite: [2, 0]
     });
 
     Crafty.sprite(64, "img/player.png", {
-        Player: [0,2]
+        PlayerSprite: [0,2]
     });
 
     Crafty.sprite(32, 'img/gui.png', {
@@ -47,25 +46,26 @@ Crafty.scene('Game', function() {
                  overlay < map.getEntitiesInLayer('overlay').length;
                  overlay++) {
                 map.getEntitiesInLayer('overlay')[overlay]
-                    .attr({z: 3});
+                    .attr({z: 6});
             }
         });
 
     var items = [];
     for (var i = 0; i < items_json.length; i++) {
-        item_json = items_json[i];
-        items.push(Crafty.e(item_json.component_string)
+        var item = items_json[i];
+        items.push(Crafty.e(item.itemName)
             .attr({
-                x: item_json.x * TILE_SIZE,
-                y: item_json.y * TILE_SIZE,
-                z: 2})
-            .setSpriteName(item_json.item_sprite_name));
+                x: item.x * TILE_SIZE,
+                y: item.y * TILE_SIZE,
+                z: 4
+            })
+            .collision());
     }
 
     // player
-    var player = Crafty.e('Actor, Fourway, Player, Collision, SpriteAnimation')
+    var player = Crafty.e('Player, PlayerSprite, Collision, SpriteAnimation')
         .fourway(3)
-        .attr({x: 240, y: 240, z: 2})
+        .attr({x: 240, y: 240, z: 5})
         // smaller collision rect for some overlap
         .collision([22,46],[42,46],[42,64],[42,64])
         .reel("walk_up", 1000, 1, 0, 7)
@@ -101,16 +101,34 @@ Crafty.scene('Game', function() {
             }
         })
 
-    Crafty.bind('KeyDown', function(e) {
+    Crafty.bind('KeyUp', function(e) {
         if (e.key == 88) {
-            for (var j = 0; j < items.length; j++) {
-                var itemsTouching = player.hit('Item');
-                if (itemsTouching) {
-                    var itemTouching = itemsTouching[0].obj;
-                    itemDisplay.changeItem(itemTouching.spriteName);
-                    itemTouching.destroy();
+            if (player.currentItem == 'none') {
+                for (var j = 0; j < items.length; j++) {
+                    var itemsTouching = player.hit('Item');
+                    if (itemsTouching) {
+                        var itemTouching = itemsTouching[0].obj;
+                        itemDisplay.changeItem(itemTouching.spriteName);
+                        player.currentItem = itemTouching.itemName;
+                        itemTouching.destroy();
+                    }
                 }
+            } else {
+                var tileX = Math.floor(player.x / TILE_SIZE) + 1;
+                var tileY = Math.floor(player.y / TILE_SIZE) + 2;
+                items.push(Crafty.e(player.currentItem)
+                    .attr({
+                        x: tileX * TILE_SIZE,
+                        y: tileY * TILE_SIZE,
+                        z: 4
+                    })
+                    .collision());
+                player.currentItem = 'none';
+                itemDisplay.removeItem();
             }
+        }
+        if (e.key == 67) {
+            // Use item
         }
     });
 
@@ -148,7 +166,7 @@ Crafty.scene('Loading', function() {
         Crafty.sprite(32, 'img/sprites.png', {
             spr_no_item: [0, 0],
             spr_player: [1, 0],
-            spr_sword: [2, 0]
+            SwordSprite: [2, 0]
         });
 
         Crafty.sprite(64, "img/player.png", {
