@@ -10,7 +10,8 @@ Crafty.scene('Game', function() {
                        HUD_PADDING);
 
     // Show current item
-    var item_display = Crafty.e('ItemDisplay')
+    var item_display = Crafty.e('ItemDisplay');
+    item_display
         .attr({z: 9})
         .fixedPosition(Crafty.viewport.width - (TILE_SIZE + HUD_PADDING),
                        HUD_PADDING);
@@ -54,6 +55,7 @@ Crafty.scene('Game', function() {
                 if (items_touching != false) {
                     item_touching = items_touching[0].obj;
                     item_display.changeItem(item_touching.spriteName);
+                    item_touching.destroy();
                 }
             }
         }
