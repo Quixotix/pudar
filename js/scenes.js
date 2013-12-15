@@ -1,12 +1,12 @@
 // This is the main game scene
 Crafty.scene('Game', function() {
     // Show Item Box
-    Crafty.e('ItemBox')
+    /*Crafty.e('ItemBox')
         .attr({x: Crafty.viewport.width - 37, y: 5, z: 10});
 
     // Show current item
     Crafty.e('ItemDisplay')
-        .attr({x: Crafty.viewport.width - 37, y: 5, z: 9});
+        .attr({x: Crafty.viewport.width - 37, y: 5, z: 9});*/
 
     // Set map data source
     Crafty.e('2D, Canvas, TiledMapBuilder')
@@ -31,7 +31,10 @@ Crafty.scene('Game', function() {
 
     // Create the player at coordinates (0, 0)
     this.player = Crafty.e('Player')
-        .attr({x: 0, y: 0, z: 2});
+        .attr({x: 10, y: 200, z: 2});
+
+    Crafty.viewport.follow(this.player);
+    //Crafty.viewport.bounds = {min:{x:0, y:0}, max:{x:1440, y:1200}};
 });
 
 // This scene displays "Loading..." while crafty loads up our sprites, and
