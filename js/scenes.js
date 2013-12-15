@@ -1,12 +1,14 @@
 // This is the main game scene
 Crafty.scene('Game', function() {
     // Show Item Box
-    /*Crafty.e('ItemBox')
-        .attr({x: Crafty.viewport.width - 37, y: 5, z: 10});
+    Crafty.e('ItemBox')
+        .attr({z: 10})
+        .fixedPosition(Crafty.viewport.width - 37, 5);
 
     // Show current item
     Crafty.e('ItemDisplay')
-        .attr({x: Crafty.viewport.width - 37, y: 5, z: 9});*/
+        .attr({z: 9})
+        .fixedPosition(Crafty.viewport.width - 37, 5);
 
     // Set map data source
     Crafty.e('2D, Canvas, TiledMapBuilder')

@@ -6,15 +6,36 @@ Crafty.c('Actor', {
     }
 });
 
-Crafty.c('ItemBox', {
+Crafty.c('HUD', {
     init: function() {
-        this.requires('Actor, spr_item_box');
+        this.requires('Actor');
+        this.bind('EnterFrame', this.adjustPosition);
+    },
+
+    fixedPosition: function(x, y) {
+        this.fixedX = x;
+        this.fixedY = y;
+    },
+
+    adjustPosition: function() {
+        this.x = this.fixedX - Crafty.viewport.x;
+        this.y = this.fixedY - Crafty.viewport.y;
     }
 });
 
+// This is the little box that will show the item you currently hold inside of
+// it.
+Crafty.c('ItemBox', {
+    init: function() {
+        this.requires('HUD, spr_item_box');
+    }
+});
+
+// This is the sprite that goes inside the item box to display the icon of the
+// currently held item
 Crafty.c('ItemDisplay', {
     init: function() {
-        this.requires('Actor, spr_no_item');
+        this.requires('HUD, spr_no_item');
         this.currentItemName = 'spr_no_item';
     },
 
