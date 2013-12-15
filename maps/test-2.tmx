@@ -9,14 +9,14 @@
  <tileset firstgid="967" name="terrain-atlas" tilewidth="32" tileheight="32">
   <image source="../img/terrain-atlas.png" width="1024" height="1024"/>
  </tileset>
- <layer name="background" width="40" height="45">
+ <layer name="background" width="40" height="45" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA+3WMQqEMBBG4TA38+i6pVFTrR5Hl3VwkCwuIskUr/hQ0vj4tbAJITQFvDJnbaFn0+e3rysk1/fezBdq9v2DPvroo++XKL77vO2ne1lJ6vX1pmeQr0mOey/7DZKnm3rqG/drNGel+/Q7i6f3qV0qVeqz7F6T2e1z3zvoU9qSzG7j3ni37+r/8CnLzT4AAAAAAJ6wAmebUpQgHAAA
   </data>
  </layer>
  <layer name="ground" width="40" height="45">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+2UQQqAIBBFhzZeqaMWtax2RV2h0nM12wgHCUVx/oO3f+jwiQDQy9AQjYIhTIZoZhcTv2/nhkMwhJu7LOsK7UuJhj7cX7n/a7nBCdZAyvuLsc+a7w996EOfHw37nJKO36gXzM3KDZtgbtCHvpyc3HAJAhnsH/rQ5wf7AsCb1nwtoeGP6Ku77wFFl+dSIBwAAA==
+   H4sIAAAAAAAAA+3UywmAMBBF0cFNWrJURVtQtAV/dTlbkQzihwnmHnj7SwgjAuSrKURaY94GbRiNXbEEkVW3hTT7vkSff1/O/2/Vhs0YbG/c55z/H3300RfHfX6m0jeqjXnrtKE35o0++jxN2jAbg437Rx99cdwX4KgM56XQcGf0/btvB69ecOsgHAAA
   </data>
  </layer>
  <layer name="collision" width="40" height="45">
@@ -26,7 +26,7 @@
  </layer>
  <layer name="overlay" width="40" height="45">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3SsQ2AQAwEQWduFKjkoW5cABmBX/KMdPkGF8F0R0actSu7S76t6rprz6Z9/ON/dPI/AAAAAGCiF3jwj+AgHAAA
+   H4sIAAAAAAAAA+3SsRFAUBBF0c1+o6gElaBOW4BsA2ucM/PyG7wI/m4aEXNuGW+XPFuza8vtTfuO7DpzV9O+7vyvxv9q/K/G/wAAAADgm26SORhZIBwAAA==
   </data>
  </layer>
 </map>
