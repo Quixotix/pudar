@@ -43,7 +43,6 @@ Crafty.c('ItemDisplay', {
         this.removeComponent(this.currentSpriteName);
         this.currentItemSpriteName = item_sprite_name;
         this.addComponent(this.currentItemSpriteName);
-        console.log('moo');
     },
 
     removeItem: function() {
