@@ -10,8 +10,8 @@ Crafty.scene('Game', function() {
                        HUD_PADDING);
 
     // Show current item
-    var item_display = Crafty.e('ItemDisplay');
-    item_display
+    var itemDisplay = Crafty.e('ItemDisplay');
+    itemDisplay
         .attr({z: 9})
         .fixedPosition(Crafty.viewport.width - (TILE_SIZE + HUD_PADDING),
                        HUD_PADDING);
@@ -90,11 +90,11 @@ Crafty.scene('Game', function() {
     Crafty.bind('KeyDown', function(e) {
         if (e.key == 88) {
             for (var j = 0; j < items.length; j++) {
-                items_touching = player.hit('Item');
-                if (items_touching != false) {
-                    item_touching = items_touching[0].obj;
-                    item_display.changeItem(item_touching.spriteName);
-                    item_touching.destroy();
+                var itemsTouching = player.hit('Item');
+                if (itemsTouching) {
+                    var itemTouching = items_touching[0].obj;
+                    itemDisplay.changeItem(itemTouching.spriteName);
+                    itemTouching.destroy();
                 }
             }
         }

@@ -63,25 +63,3 @@ Crafty.c('Item', {
         this.spriteName = item_sprite_name;
     }
 });
-
-/*
-Crafty.c('Player', {
-    init: function() {
-        this.requires('Actor, Fourway, spr_player, Collision')
-            .fourway(4)
-            // smaller collision rect for some overlap
-            .collision([8,8],[8,24],[24,24],[24,8])
-            .animate("walk_left", 0, 1, 3)
-            .animate("walk_right", 0, 2, 3)
-            .animate("walk_up", 0, 3, 3)
-            .animate("walk_down", 0, 0, 3)
-            .bind('Moved', function(from) {
-                // collision detection with tiles from the "Collision" layer
-                if (this.hit('Collision')){
-                    this.attr({x: from.x, y:from.y});
-                }
-                this.z = Math.floor(this._y + this._h);
-            })
-    },
-});
-*/
