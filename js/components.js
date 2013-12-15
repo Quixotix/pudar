@@ -36,19 +36,31 @@ Crafty.c('ItemBox', {
 Crafty.c('ItemDisplay', {
     init: function() {
         this.requires('HUD, spr_no_item');
-        this.currentItemName = 'spr_no_item';
+        this.currentItemSpriteName = 'spr_no_item';
     },
 
     changeItem: function(item_sprite_name) {
         this.removeComponent(this.currentSpriteName);
-        this.currentItemName = item_sprite_name;
-        this.addComponent(this.currentItemName);
+        this.currentItemSpriteName = item_sprite_name;
+        this.addComponent(this.currentItemSpriteName);
     },
 
     removeItem: function() {
         this.removeComponent(this.currentSpriteName);
-        this.currentItemName = 'spr_no_item';
-        this.addComponent(this.currentItemName);
+        this.currentItemSpriteName = 'spr_no_item';
+        this.addComponent(this.currentItemSpriteName);
+    }
+});
+
+// Component for actual items
+Crafty.c('Item', {
+    init: function() {
+        this.requires('Actor, Collision')
+        .collision();
+    },
+
+    setSpriteName: function(item_sprite_name) {
+        this.spriteName = item_sprite_name;
     }
 });
 

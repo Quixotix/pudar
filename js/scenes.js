@@ -1,14 +1,19 @@
 // This is the main game scene
 Crafty.scene('Game', function() {
+    var TILE_SIZE = 32;
+    var HUD_PADDING = 5;
+
     // Show Item Box
     Crafty.e('ItemBox')
         .attr({z: 10})
-        .fixedPosition(Crafty.viewport.width - 37, 5);
+        .fixedPosition(Crafty.viewport.width - (TILE_SIZE + HUD_PADDING),
+                       HUD_PADDING);
 
     // Show current item
-    Crafty.e('ItemDisplay')
+    var item_display = Crafty.e('ItemDisplay')
         .attr({z: 9})
-        .fixedPosition(Crafty.viewport.width - 37, 5);
+        .fixedPosition(Crafty.viewport.width - (TILE_SIZE + HUD_PADDING),
+                       HUD_PADDING);
 
     // Set map data source
     Crafty.e('2D, Canvas, TiledMapBuilder')
@@ -41,9 +46,33 @@ Crafty.scene('Game', function() {
             */
         });
 
+    var items = [];
+    for (var i = 0; i < items_json.length; i++) {
+        item_json = items_json[i];
+        items.push(Crafty.e(item_json.component_string)
+            .attr({
+                x: item_json.x * TILE_SIZE,
+                y: item_json.y * TILE_SIZE,
+                z: 2})
+            .setSpriteName(item_json.item_sprite_name));
+    }
+
     // Create the player at coordinates (0, 0)
     this.player = Crafty.e('Player')
         .attr({x: 10, y: 200, z: 2});
+
+    Crafty.bind('KeyDown', function(e) {
+        if (e.key == 88) {
+            console.log(e.key);
+            for (var j = 0; j < items.length; j++) {
+                items_touching = this.player.hit();
+                if (items_touching != false) {
+                    item_touching = items_touching.obj;
+                    item_display.changeItem(item_touching.spriteName);
+                }
+            }
+        }
+    });
 
     Crafty.viewport.follow(this.player);
     //Crafty.viewport.bounds = {min:{x:0, y:0}, max:{x:1440, y:1200}};
