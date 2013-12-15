@@ -114,12 +114,12 @@ Crafty.scene('Game', function() {
                     }
                 }
             } else {
-                var tileX = Math.floor(player.x / TILE_SIZE) + 1;
-                var tileY = Math.floor(player.y / TILE_SIZE) + 2;
+                var tileX = player.x + (TILE_SIZE / 2);
+                var tileY = player.y + (TILE_SIZE);
                 items.push(Crafty.e(player.currentItem)
                     .attr({
-                        x: tileX * TILE_SIZE,
-                        y: tileY * TILE_SIZE,
+                        x: tileX,
+                        y: tileY,
                         z: 4
                     })
                     .collision());
