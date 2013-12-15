@@ -114,7 +114,7 @@ var Pudar = (function (Crafty, jQuery) {
         start: function() {
             Crafty.init(config.width, config.height);
             Crafty.background('black');
-            this.loadScene(config.scenes.test)
+            this.loadScene(config.scenes.begin)
         }
     }
 }(Crafty, jQuery));

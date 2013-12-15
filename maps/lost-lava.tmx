@@ -5,17 +5,17 @@
  </tileset>
  <layer name="background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA3NjZGBwIwM7MmDH5JiFzTxyzaG2eexAzEFF82SAWJZE83CFNT48ks2DxRm1zIPFGbHmEZOeSPEvMemJ0vxCLYzNf5RgdP8BAOySEcCwBAAA
+   H4sIAAAAAAAAA3NjZGBwIwM7MmDHIDl2II4GYg4KzEOWc4fSrlQyTwaIDYFYlghz2KH+wGceKVgGai8p5uEKa3x4JJsHizNqmQeLM2LNIyY9keJfYtITuemR2hib/yjB6P4DAH6jI72wBAAA
   </data>
  </layer>
- <layer name="collision" width="20" height="15">
+ <layer name="collision" width="20" height="15" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA2NgIA+4MyLYBkC2IRSTC5DNc6XAHFqbJ8dIf/exA+WjCeAYEsxzJ8L90lQ2DxkQY54cCWYSYx4nDjXIaReGZYl0H8xMmFvZyEwbMljcQKxbRhoAAJ5StQSwBAAA
   </data>
  </layer>
  <layer name="main" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+   H4sIAAAAAAAAA2NgGBrgEeNAu2AUjIJRMNAAAED8Qc+wBAAA
   </data>
  </layer>
  <layer name="overlay" width="20" height="15" visible="0">

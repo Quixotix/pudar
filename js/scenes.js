@@ -96,7 +96,9 @@ Crafty.scene('Game', function() {
         })
         .bind('Moved', function(from) {
             // collision detection with tiles from the "Collision" layer
-            if (this.hit('Solid')){
+            var hitObjects = this.hit('Solid');
+            if (hitObjects) {
+                console.log(hitObjects);
                 this.attr({x: from.x, y:from.y});
             }
         })
