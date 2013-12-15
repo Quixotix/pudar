@@ -92,7 +92,7 @@ Crafty.scene('Game', function() {
             for (var j = 0; j < items.length; j++) {
                 var itemsTouching = player.hit('Item');
                 if (itemsTouching) {
-                    var itemTouching = items_touching[0].obj;
+                    var itemTouching = itemsTouching[0].obj;
                     itemDisplay.changeItem(itemTouching.spriteName);
                     itemTouching.destroy();
                 }
