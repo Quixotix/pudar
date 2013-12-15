@@ -37,15 +37,22 @@ Crafty.scene('Game', function() {
 // This scene displays "Loading..." while crafty loads up our sprites, and
 // continues to the game scene afterwards.
 Crafty.scene('Loading', function() {
+    var doneLoading = false;
+    var doneWaiting = false;
+
+    setTimeout(function() {
+        doneWaiting = true;
+        if (doneLoading) {
+            Crafty.scene('Game')
+        }
+    }, 1000);
+
     // Display "Loading..." in white at (10, 10) on the screen
     Crafty.e('2D, DOM, Text')
-        .text('Loading...')
+        .text('LOADING...')
         .attr({x: 10, y: 10})
-        .css({
-            'font-family': 'monospace',
-            'font-size': '24px',
-            'color': 'white'
-        });
+        .textColor('#FFFFFF')
+        .textFont({size: '24px', family: 'monospace', weight: 'bold'})
 
     // Load sprites from img/squares.png. Each sprites is 16x16, so the image
     // is divided into a grid of 16x16 tiles. The player sprite (currently a
@@ -65,6 +72,9 @@ Crafty.scene('Loading', function() {
         });
 
         // Switch to the Game scene
-        Crafty.scene('Game');
+        doneLoading = true;
+        if (doneWaiting) {
+            Crafty.scene('Game');
+        }
     });
 });
