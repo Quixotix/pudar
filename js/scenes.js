@@ -1,5 +1,5 @@
 // This is the main game scene
-Crafty.scene('Test', function() {
+Crafty.scene('Game', function() {
     var TILE_SIZE = 32;
     var HUD_PADDING = 5;
 
@@ -65,7 +65,7 @@ Crafty.scene('Test', function() {
     // player
     var player = Crafty.e('Actor, Fourway, Player, Collision, SpriteAnimation')
         .fourway(3)
-        .attr({x: 32, y: 192, z: 2})
+        .attr({x: 240, y: 240, z: 2})
         // smaller collision rect for some overlap
         .collision([22,46],[42,46],[42,64],[42,64])
         .reel("walk_up", 1000, 1, 0, 7)

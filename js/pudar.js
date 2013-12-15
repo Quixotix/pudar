@@ -16,9 +16,14 @@ var Pudar = {
      */
     scenes: {
         test: {
-            name: 'Test',
-            assets: ['img/sprites.png', 'img/gui.png', 'img/test_terrain.png'],
+            name: 'Game',
+            assets: ['img/sprites.png', 'img/gui.png', 'img/terrain-on-sand.png', 'img/terrain.png', 'img/terrain-atlas.png'],
             map: 'maps/test-2.json',
+        },
+        begin: {
+            name: 'Game',
+            assets: ['img/sprites.png', 'img/gui.png', 'img/terrain-on-sand.png'],
+            map: 'maps/lost-lava.json',
         }
     },
 
@@ -93,6 +98,6 @@ var Pudar = {
         var self = this;
         Crafty.init(this.config.width, this.config.height);
         Crafty.background('black');
-        this.loadScene(self.scenes.test)
+        this.loadScene(self.scenes.begin)
     }
 }
