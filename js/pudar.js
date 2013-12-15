@@ -17,12 +17,12 @@ var Pudar = (function (Crafty, jQuery) {
         scenes: {
             test: {
                 name: 'Game',
-                assets: ['img/sprites.png', 'img/gui.png', 'img/terrain-on-sand.png', 'img/terrain.png', 'img/terrain-atlas.png'],
+                assets: ['img/sprites.png', 'img/gui.png', 'img/terrain-on-sand.png', 'img/terrain.png', 'img/terrain-atlas.png', 'img/torch.png'],
                 map: 'maps/test-2.json',
             },
             begin: {
                 name: 'Game',
-                assets: ['img/sprites.png', 'img/gui.png', 'img/terrain-on-sand.png'],
+                assets: ['img/sprites.png', 'img/gui.png', 'img/terrain-on-sand.png', 'img/torch.png'],
                 map: 'maps/lost-lava.json',
             }
         }

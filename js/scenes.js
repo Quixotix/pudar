@@ -21,6 +21,10 @@ Crafty.scene('Game', function() {
         SwordSprite: [2, 0]
     });
 
+    Crafty.sprite(32, 64, 'img/torch.png', {
+        TorchSprite: [0, 0]
+    });
+
     Crafty.sprite(64, "img/player.png", {
         PlayerSprite: [0,2]
     });

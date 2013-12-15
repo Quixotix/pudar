@@ -1,6 +1,6 @@
 var items_json = [
     {
-        itemName: 'Sword',
+        itemName: 'Torch',
         x: 6,
         y: 12
     }
