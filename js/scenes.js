@@ -29,6 +29,16 @@ Crafty.scene('Game', function() {
                 map.getEntitiesInLayer('overlay')[overlay]
                     .attr({z: 3});
             }
+
+            /*
+            for (var sprite = 0;
+                 sprite < map.getEntititesInLayer('sprites').length;
+                 sprite++) {
+                map.getEntitiesInLayer('sprites')[sprite]
+                    .addComponent('Item');
+                    .setItemSprite(
+            }
+            */
         });
 
     // Create the player at coordinates (0, 0)
