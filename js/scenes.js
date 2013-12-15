@@ -48,19 +48,6 @@ Crafty.scene('Game', function() {
             .setSpriteName(item_json.item_sprite_name));
     }
 
-    Crafty.bind('KeyDown', function(e) {
-        if (e.key == 88) {
-            for (var j = 0; j < items.length; j++) {
-                items_touching = this.player.hit('Item');
-                if (items_touching != false) {
-                    item_touching = items_touching[0].obj;
-                    item_display.changeItem(item_touching.spriteName);
-                    item_touching.destroy();
-                }
-            }
-        }
-    });
-
     // player
     var player = Crafty.e('Actor, Fourway, Player, Collision, SpriteAnimation')
         .fourway(4)
@@ -99,6 +86,19 @@ Crafty.scene('Game', function() {
                 this.attr({x: from.x, y:from.y});
             }
         })
+
+    Crafty.bind('KeyDown', function(e) {
+        if (e.key == 88) {
+            for (var j = 0; j < items.length; j++) {
+                items_touching = player.hit('Item');
+                if (items_touching != false) {
+                    item_touching = items_touching[0].obj;
+                    item_display.changeItem(item_touching.spriteName);
+                    item_touching.destroy();
+                }
+            }
+        }
+    });
 
     player.animate("stand", -1)
     Crafty.viewport.follow(player);
