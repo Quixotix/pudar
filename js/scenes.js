@@ -24,7 +24,7 @@ Crafty.scene('Game', function() {
                  collision < map.getEntitiesInLayer('collision').length;
                  collision++) {
                 map.getEntitiesInLayer('collision')[collision]
-                    .addComponent("Collision")
+                    .addComponent("Collision, Solid")
                     .collision();
             }
 
@@ -34,16 +34,6 @@ Crafty.scene('Game', function() {
                 map.getEntitiesInLayer('overlay')[overlay]
                     .attr({z: 3});
             }
-
-            /*
-            for (var sprite = 0;
-                 sprite < map.getEntititesInLayer('sprites').length;
-                 sprite++) {
-                map.getEntitiesInLayer('sprites')[sprite]
-                    .addComponent('Item');
-                    .setItemSprite(
-            }
-            */
         });
 
     var items = [];
@@ -63,11 +53,10 @@ Crafty.scene('Game', function() {
 
     Crafty.bind('KeyDown', function(e) {
         if (e.key == 88) {
-            console.log(e.key);
             for (var j = 0; j < items.length; j++) {
-                items_touching = this.player.hit();
+                items_touching = this.player.hit('Item');
                 if (items_touching != false) {
-                    item_touching = items_touching.obj;
+                    item_touching = items_touching[0].obj;
                     item_display.changeItem(item_touching.spriteName);
                 }
             }

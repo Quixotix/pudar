@@ -43,6 +43,7 @@ Crafty.c('ItemDisplay', {
         this.removeComponent(this.currentSpriteName);
         this.currentItemSpriteName = item_sprite_name;
         this.addComponent(this.currentItemSpriteName);
+        console.log('moo');
     },
 
     removeItem: function() {
@@ -74,7 +75,7 @@ Crafty.c('Player', {
             .collision([8,8],[8,24],[24,24],[24,8])
             .bind('Moved', function(from) {
                 // collision detection with tiles from the "Collision" layer
-                if (this.hit('Collision')){
+                if (this.hit('Solid')){
                     this.attr({x: from.x, y:from.y});
                 }
                 this.z = Math.floor(this._y + this._h);
