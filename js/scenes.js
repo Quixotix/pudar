@@ -32,7 +32,7 @@ Crafty.scene('Game', function() {
 
     // Set map data source
     Crafty.e('2D, Canvas, TiledMapBuilder')
-        .setMapDataSource(Pudar.mapDataSource)
+        .setMapDataSource(Pudar.getMapDataSource())
         .createWorld(function(map) {
 
             for (var collision = 0;
