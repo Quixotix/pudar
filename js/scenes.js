@@ -65,7 +65,7 @@ Crafty.scene('Game', function() {
     // player
     var player = Crafty.e('Player, PlayerSprite, Collision, SpriteAnimation')
         .fourway(3)
-        .attr({x: 240, y: 240, z: 5})
+        .attr({x: 240, y: 432, z: 5})
         // smaller collision rect for some overlap
         .collision([22,46],[42,46],[42,64],[42,64])
         .reel("walk_up", 1000, 1, 0, 7)
