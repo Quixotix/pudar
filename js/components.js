@@ -70,20 +70,14 @@ Crafty.c('Player', {
     init: function() {
         this.requires('Actor, Fourway, spr_player, Collision')
             .fourway(4)
-            .collision()
-            .stopOnSolids();
+            // smaller collision rect for some overlap
+            .collision([8,8],[8,24],[24,24],[24,8])
+            .bind('Moved', function(from) {
+                // collision detection with tiles from the "Collision" layer
+                if (this.hit('Collision')){
+                    this.attr({x: from.x, y:from.y});
+                }
+                this.z = Math.floor(this._y + this._h);
+            })
     },
-    
-    stopOnSolids: function() {
-        this.onHit('Solid', this.stopMovement);
-        return this;
-    },
-
-    stopMovement: function() {
-        this._speed = 0;
-        if (this._movement) {
-            this.x -= this._movement.x;
-            this.y -= this._movement.y;
-        }
-    }
 });

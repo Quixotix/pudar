@@ -24,7 +24,7 @@ Crafty.scene('Game', function() {
                  collision < map.getEntitiesInLayer('collision').length;
                  collision++) {
                 map.getEntitiesInLayer('collision')[collision]
-                    .addComponent("Collision, Solid")
+                    .addComponent("Collision")
                     .collision();
             }
 
