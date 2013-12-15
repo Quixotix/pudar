@@ -1,5 +1,5 @@
 // This is the main game scene
-Crafty.scene('Game', function() {
+Crafty.scene('Test', function() {
     var TILE_SIZE = 32;
     var HUD_PADDING = 5;
 
@@ -16,9 +16,23 @@ Crafty.scene('Game', function() {
         .fixedPosition(Crafty.viewport.width - (TILE_SIZE + HUD_PADDING),
                        HUD_PADDING);
 
+    Crafty.sprite(32, 'img/sprites.png', {
+        spr_no_item: [0, 0],
+        spr_player: [1, 0],
+        spr_sword: [2, 0]
+    });
+
+    Crafty.sprite(64, "img/player.png", {
+        Player: [0,2]
+    });
+
+    Crafty.sprite(32, 'img/gui.png', {
+        spr_item_box: [0, 0]
+    });
+
     // Set map data source
     Crafty.e('2D, Canvas, TiledMapBuilder')
-        .setMapDataSource(map_json)
+        .setMapDataSource(Pudar.mapDataSource)
         .createWorld(function(map) {
 
             for (var collision = 0;

@@ -53,7 +53,7 @@
  "tilesets":[
         {
          "firstgid":1,
-         "image":"..\/img\/terrain-on-sand.png",
+         "image":"img/terrain-on-sand.png",
          "imageheight":736,
          "imagewidth":672,
          "margin":0,
@@ -68,7 +68,7 @@
         }, 
         {
          "firstgid":484,
-         "image":"..\/img\/terrain.png",
+         "image":"img/terrain.png",
          "imageheight":736,
          "imagewidth":672,
          "margin":0,
@@ -83,7 +83,7 @@
         }, 
         {
          "firstgid":967,
-         "image":"..\/img\/terrain-atlas.png",
+         "image":"img/terrain-atlas.png",
          "imageheight":1024,
          "imagewidth":1024,
          "margin":0,
@@ -98,7 +98,7 @@
         }, 
         {
          "firstgid":1991,
-         "image":"..\/img\/sprites.png",
+         "image":"img/sprites.png",
          "imageheight":32,
          "imagewidth":96,
          "margin":0,
