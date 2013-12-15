@@ -1,5 +1,13 @@
 // This is the main game scene
 Crafty.scene('Game', function() {
+    // Show Item Box
+    Crafty.e('ItemBox')
+        .attr({x: Crafty.viewport.width - 37, y: 5, z: 10});
+
+    // Show current item
+    Crafty.e('ItemDisplay')
+        .attr({x: Crafty.viewport.width - 37, y: 5, z: 9});
+
     // Set map data source
     Crafty.e('2D, Canvas, TiledMapBuilder')
         .setMapDataSource(map_json)
@@ -43,12 +51,18 @@ Crafty.scene('Loading', function() {
     // is divided into a grid of 16x16 tiles. The player sprite (currently a
     // white square) is located at (0, 0) on the grid, and the wall sprite
     // (currently a black square) is located at (0, 1) on the grid.
-    Crafty.load(['img/squares.png', 'img/test_terrain.png'], function() {
+    Crafty.load(['img/sprites.png', 'img/gui.png', 'img/test_terrain.png'],
+                function() {
         // Load the sprite and tell crafty what is where
-        Crafty.sprite(16, 'img/squares.png', {
-            spr_player: [0, 0],
-            spr_wall: [0, 1]
-        })
+        Crafty.sprite(32, 'img/sprites.png', {
+            spr_no_item: [0, 0],
+            spr_player: [1, 0],
+            spr_sword: [2, 0]
+        });
+
+        Crafty.sprite(32, 'img/gui.png', {
+            spr_item_box: [0, 0]
+        });
 
         // Switch to the Game scene
         Crafty.scene('Game');
