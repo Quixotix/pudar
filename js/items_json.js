@@ -1,8 +1,7 @@
 var items_json = [
     {
-        component_string: 'Item, Sword, spr_sword',
-        item_sprite_name: 'spr_sword',
-        x: 3,
+        itemName: 'Sword',
+        x: 6,
         y: 7
     }
 ]

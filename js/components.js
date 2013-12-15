@@ -35,19 +35,19 @@ Crafty.c('ItemBox', {
 // currently held item
 Crafty.c('ItemDisplay', {
     init: function() {
-        this.requires('HUD, spr_no_item');
-        this.currentItemSpriteName = 'spr_no_item';
+        this.requires('HUD, NoItemSprite');
+        this.currentItemSpriteName = 'NoItemSprite';
     },
 
     changeItem: function(item_sprite_name) {
-        this.removeComponent(this.currentSpriteName);
+        this.removeComponent(this.currentItemSpriteName);
         this.currentItemSpriteName = item_sprite_name;
         this.addComponent(this.currentItemSpriteName);
     },
 
     removeItem: function() {
-        this.removeComponent(this.currentSpriteName);
-        this.currentItemSpriteName = 'spr_no_item';
+        this.removeComponent(this.currentItemSpriteName);
+        this.currentItemSpriteName = 'NoItemSprite';
         this.addComponent(this.currentItemSpriteName);
     }
 });
@@ -55,11 +55,31 @@ Crafty.c('ItemDisplay', {
 // Component for actual items
 Crafty.c('Item', {
     init: function() {
-        this.requires('Actor, Collision')
-        .collision();
+        this.requires('Actor, Collision');
     },
 
-    setSpriteName: function(item_sprite_name) {
-        this.spriteName = item_sprite_name;
+    setSpriteName: function(itemSpriteName) {
+        this.spriteName = itemSpriteName;
+    },
+
+    setItemName: function(itemName) {
+        this.itemName = itemName;
+    }
+});
+
+// Player
+Crafty.c('Player', {
+    init: function() {
+        this.requires('Actor, Fourway');
+        this.currentItem = 'none';
+    }
+});
+
+// Sword item
+Crafty.c('Sword', {
+    init: function() {
+        this.requires('Item, SwordSprite');
+        this.setItemName('Sword');
+        this.setSpriteName('SwordSprite');
     }
 });
