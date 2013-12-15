@@ -65,20 +65,24 @@ Crafty.c('Item', {
     }
 });
 
-// The player component is just a component that includes the Actor, Fourway
-// movement, and player sprite components.
+/*
 Crafty.c('Player', {
     init: function() {
         this.requires('Actor, Fourway, spr_player, Collision')
             .fourway(4)
             // smaller collision rect for some overlap
             .collision([8,8],[8,24],[24,24],[24,8])
+            .animate("walk_left", 0, 1, 3)
+            .animate("walk_right", 0, 2, 3)
+            .animate("walk_up", 0, 3, 3)
+            .animate("walk_down", 0, 0, 3)
             .bind('Moved', function(from) {
                 // collision detection with tiles from the "Collision" layer
-                if (this.hit('Solid')){
+                if (this.hit('Collision')){
                     this.attr({x: from.x, y:from.y});
                 }
                 this.z = Math.floor(this._y + this._h);
             })
     },
 });
+*/

@@ -47,10 +47,6 @@ Crafty.scene('Game', function() {
             .setSpriteName(item_json.item_sprite_name));
     }
 
-    // Create the player at coordinates (0, 0)
-    this.player = Crafty.e('Player')
-        .attr({x: 10, y: 200, z: 2});
-
     Crafty.bind('KeyDown', function(e) {
         if (e.key == 88) {
             for (var j = 0; j < items.length; j++) {
@@ -63,8 +59,47 @@ Crafty.scene('Game', function() {
         }
     });
 
-    Crafty.viewport.follow(this.player);
-    //Crafty.viewport.bounds = {min:{x:0, y:0}, max:{x:1440, y:1200}};
+    // player
+    var player = Crafty.e('Actor, Fourway, Player, Collision, SpriteAnimation')
+        .fourway(4)
+        .attr({x: 32, y: 192, z: 2})
+        // smaller collision rect for some overlap
+        .collision([22,46],[42,46],[42,64],[42,64])
+        .reel("walk_up", 1000, 1, 0, 7)
+        .reel("walk_left", 1000, 1, 1, 7)
+        .reel("walk_down", 1000, 1, 2, 7)
+        .reel("walk_right", 1000, 1, 3, 7)
+        .reel("stand", 500, 1, 4, 3)
+        .bind("NewDirection", function (direction) {
+            if (direction.x < 0) {
+                if (!this.isPlaying("walk_left"))
+                    this.animate("walk_left", -1);
+            }
+            if (direction.x > 0) {
+                if (!this.isPlaying("walk_right"))
+                    this.animate("walk_right", -1);
+            }
+            if (direction.y < 0) {
+                if (!this.isPlaying("walk_up"))
+                    this.animate("walk_up", -1);
+            }
+            if (direction.y > 0) {
+                if (!this.isPlaying("walk_down"))
+                    this.animate("walk_down", -1);
+            }
+            if(!direction.x && !direction.y) {
+                this.animate("stand", -1);
+            }
+        })
+        .bind('Moved', function(from) {
+            // collision detection with tiles from the "Collision" layer
+            if (this.hit('Solid')){
+                this.attr({x: from.x, y:from.y});
+            }
+        })
+
+    player.animate("stand", -1)
+    Crafty.viewport.follow(player);
 });
 
 // This scene displays "Loading..." while crafty loads up our sprites, and
@@ -78,7 +113,7 @@ Crafty.scene('Loading', function() {
         if (doneLoading) {
             Crafty.scene('Game')
         }
-    }, 1000);
+    }, 500);
 
     // Display "Loading..." in white at (10, 10) on the screen
     Crafty.e('2D, DOM, Text')
@@ -98,6 +133,10 @@ Crafty.scene('Loading', function() {
             spr_no_item: [0, 0],
             spr_player: [1, 0],
             spr_sword: [2, 0]
+        });
+
+        Crafty.sprite(64, "img/player.png", {
+            Player: [0,2]
         });
 
         Crafty.sprite(32, 'img/gui.png', {
