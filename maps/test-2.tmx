@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="45" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="terrain-on-sand" tilewidth="32" tileheight="32">
+  <image source="../img/terrain-on-sand.png" width="672" height="736"/>
+ </tileset>
+ <tileset firstgid="484" name="terrain" tilewidth="32" tileheight="32">
+  <image source="../img/terrain.png" width="672" height="736"/>
+ </tileset>
+ <tileset firstgid="967" name="terrain-atlas" tilewidth="32" tileheight="32">
+  <image source="../img/terrain-atlas.png" width="1024" height="1024"/>
+ </tileset>
+ <layer name="background" width="40" height="45">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3WMQqEMBBG4TA38+i6pVFTrR5Hl3VwkCwuIskUr/hQ0vj4tbAJITQFvDJnbaFn0+e3rysk1/fezBdq9v2DPvroo++XKL77vO2ne1lJ6vX1pmeQr0mOey/7DZKnm3rqG/drNGel+/Q7i6f3qV0qVeqz7F6T2e1z3zvoU9qSzG7j3ni37+r/8CnLzT4AAAAAAJ6wAmebUpQgHAAA
+  </data>
+ </layer>
+ <layer name="ground" width="40" height="45">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2UQQqAIBBFhzZeqaMWtax2RV2h0nM12wgHCUVx/oO3f+jwiQDQy9AQjYIhTIZoZhcTv2/nhkMwhJu7LOsK7UuJhj7cX7n/a7nBCdZAyvuLsc+a7w996EOfHw37nJKO36gXzM3KDZtgbtCHvpyc3HAJAhnsH/rQ5wf7AsCb1nwtoeGP6Ku77wFFl+dSIBwAAA==
+  </data>
+ </layer>
+ <layer name="collision" width="40" height="45">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2Y7Q2CMBCGi0gYQE38WEBZwX/iBpqoiVvoNs7jXFgSCM2lBy3Q9oj3JG8KCbRPjmt/kEdC5I5zlsE4Vc/MZZKB6/Sdw8RvI7Md6Nd3DhM/LHcPebT43TreLVlXYxw119SZimfNNw1twPwz3H/2XBIhrkloC5yXdHsT9lPh/rOH+49hpsknbhIa6FDfU3JUUX2o+elcQjra1CqkI7Y21ps+sV0zZD8u5NpLkBXSkz5Qz5KSvRwPIFlAP0ibH9xLPoDfUhCrH3TRJdPUjaof9GQ/9nPtV8z057QPRxO/tn1M1a/LcZcK8Rwhrup3HOl/iKv6sZ+ZH+Y4lt8P06W9RCAcAAA=
+  </data>
+ </layer>
+ <layer name="overlay" width="40" height="45">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3SsQ2AQAwEQWduFKjkoW5cABmBX/KMdPkGF8F0R0actSu7S76t6rprz6Z9/ON/dPI/AAAAAGCiF3jwj+AgHAAA
+  </data>
+ </layer>
+</map>
