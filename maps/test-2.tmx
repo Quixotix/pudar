@@ -9,7 +9,10 @@
  <tileset firstgid="967" name="terrain-atlas" tilewidth="32" tileheight="32">
   <image source="../img/terrain-atlas.png" width="1024" height="1024"/>
  </tileset>
- <layer name="background" width="40" height="45" visible="0">
+ <tileset firstgid="1991" name="sprites" tilewidth="32" tileheight="32">
+  <image source="../img/sprites.png" width="96" height="32"/>
+ </tileset>
+ <layer name="background" width="40" height="45">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA+3WMQqEMBBG4TA38+i6pVFTrR5Hl3VwkCwuIskUr/hQ0vj4tbAJITQFvDJnbaFn0+e3rysk1/fezBdq9v2DPvroo++XKL77vO2ne1lJ6vX1pmeQr0mOey/7DZKnm3rqG/drNGel+/Q7i6f3qV0qVeqz7F6T2e1z3zvoU9qSzG7j3ni37+r/8CnLzT4AAAAAAJ6wAmebUpQgHAAA
   </data>
