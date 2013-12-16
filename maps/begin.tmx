@@ -8,12 +8,12 @@
    H4sIAAAAAAAAA+2V2w3DIAxFw0Jp2CEPqSM0/coEaYdoO3ZBMipCNtjgj1TKx1GiPA7BuZjNdN12cvLH3BwroOHbHQ/g6L61gTvia+GJ+C6OdwUD4fPX+kxtFjiOcG7huGd8pXpbZIwWH/VPtXw13xevIYxZ6ONk6qg+n1kqf5ORr6Epqd/L/HJOzSF+huKDzIvy1YL5FkVfWk+qR3F93IxQ2dfwSfppyJqWL2RNy6c9X6kv7B+Dks/fvxJjcNcY1g/Smo/Ie7nen8uFdA1jvjgXEt/I+L8lX7q3zAxfrsdI8+Z9FpyePvLbCl+pZ4X5SbPLHbdUvxa+haH7dBAOAAA=
   </data>
  </layer>
- <layer name="foreground" width="20" height="45">
+ <layer name="foreground" width="20" height="45" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA+3BAQEAAACCIP+vbkhAAQAA8Gh7blyXEA4AAA==
   </data>
  </layer>
- <layer name="overlay" width="20" height="45">
+ <layer name="overlay" width="20" height="45" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA+3BAQEAAACCIP+vbkhAAQAA8Gh7blyXEA4AAA==
   </data>
