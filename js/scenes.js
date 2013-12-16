@@ -21,6 +21,10 @@ Crafty.scene('Game', function() {
         SwordSprite: [2, 0]
     });
 
+    Crafty.sprite(32, 64, 'img/torch.png', {
+        TorchSprite: [0, 0]
+    });
+
     Crafty.sprite(64, "img/player.png", {
         PlayerSprite: [0,2]
     });
@@ -39,7 +43,8 @@ Crafty.scene('Game', function() {
                  collision++) {
                 map.getEntitiesInLayer('collision')[collision]
                     .addComponent("Collision, Solid")
-                    .collision();
+                    .collision()
+                    .attr({z: -1});
             }
 
             for (var overlay = 0;
@@ -65,7 +70,7 @@ Crafty.scene('Game', function() {
     // player
     var player = Crafty.e('Player, PlayerSprite, Collision, SpriteAnimation')
         .fourway(3)
-        .attr({x: 240, y: 240, z: 5})
+        .attr({x: 240, y: 432, z: 5})
         // smaller collision rect for some overlap
         .collision([22,46],[42,46],[42,64],[42,64])
         .reel("walk_up", 1000, 1, 0, 7)
@@ -136,53 +141,4 @@ Crafty.scene('Game', function() {
 
     player.animate("stand", -1)
     Crafty.viewport.follow(player);
-});
-
-// This scene displays "Loading..." while crafty loads up our sprites, and
-// continues to the game scene afterwards.
-Crafty.scene('Loading', function() {
-    var doneLoading = false;
-    var doneWaiting = false;
-
-    setTimeout(function() {
-        doneWaiting = true;
-        if (doneLoading) {
-            Crafty.scene('Game')
-        }
-    }, 500);
-
-    // Display "Loading..." in white at (10, 10) on the screen
-    Crafty.e('2D, DOM, Text')
-        .text('LOADING...')
-        .attr({x: 10, y: 10})
-        .textColor('#FFFFFF')
-        .textFont({size: '24px', family: 'monospace', weight: 'bold'})
-
-    // Load sprites from img/squares.png. Each sprites is 16x16, so the image
-    // is divided into a grid of 16x16 tiles. The player sprite (currently a
-    // white square) is located at (0, 0) on the grid, and the wall sprite
-    // (currently a black square) is located at (0, 1) on the grid.
-    Crafty.load(['img/sprites.png', 'img/gui.png', 'img/test_terrain.png'],
-                function() {
-        // Load the sprite and tell crafty what is where
-        Crafty.sprite(32, 'img/sprites.png', {
-            spr_no_item: [0, 0],
-            spr_player: [1, 0],
-            SwordSprite: [2, 0]
-        });
-
-        Crafty.sprite(64, "img/player.png", {
-            Player: [0,2]
-        });
-
-        Crafty.sprite(32, 'img/gui.png', {
-            spr_item_box: [0, 0]
-        });
-
-        // Switch to the Game scene
-        doneLoading = true;
-        if (doneWaiting) {
-            Crafty.scene('Game');
-        }
-    });
 });

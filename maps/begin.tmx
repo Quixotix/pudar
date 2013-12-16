@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="20" height="45" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="background" tilewidth="32" tileheight="32">
-  <image source="../img/background.png" width="735" height="800"/>
+  <image source="../img/background.png" width="736" height="800"/>
  </tileset>
  <layer name="background" width="20" height="45">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+2V2w3DIAxFw0Jp2CEPqSM0/coEaYdoO3ZBMipCNtjgj1TKx1GiPA7BuZjNdN12cvLH3BwroOHbHQ/g6L61gTvia+GJ+C6OdwUD4fPX+kxtFjiOcG7huGd8pXpbZIwWH/VPtXw13xevIYxZ6ONk6qg+n1kqf5ORr6Epqd/L/HJOzSF+huKDzIvy1YL5FkVfWk+qR3F93IxQ2dfwSfppyJqWL2RNy6c9X6kv7B+Dks/fvxJjcNcY1g/Smo/Ie7nen8uFdA1jvjgXEt/I+L8lX7q3zAxfrsdI8+Z9FpyePvLbCl+pZ4X5SbPLHbdUvxa+haH7dBAOAAA=
+   H4sIAAAAAAAAA+2WTQ6DIBBG5VxWDoGa9Aq1O09ge4nqbQsJpITMwAzMwiYuXjT+PGT8GF1V160XF3/Mw7J4JHyb5eU5u29p4An4WngDvptlr2BAfO5Yn6nN7LfG72u/3TK+Ur01MEaLD3unUr6a54vXEMTE9FEydVafyyyWv1Hx19CY1O+jfjnH5hBfg3EA88J8tUC+WdCX1hPrUVQfNSNY9iV8nH4asiblC1mT8knPl+sL349ByOfO35ExqGsM6gdpzQ1wX67353LBXcOQL84Fx2cI77fkS78tE8GX6zHcvDlf+A9w9JFfV/hKPSvMj5td6ril+rXwBfgBEcEQDgAA
   </data>
  </layer>
- <layer name="foreground" width="20" height="45" visible="0">
+ <layer name="foreground" width="20" height="45">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA+3BAQEAAACCIP+vbkhAAQAA8Gh7blyXEA4AAA==
   </data>
  </layer>
- <layer name="overlay" width="20" height="45" visible="0">
+ <layer name="overlay" width="20" height="45">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA+3BAQEAAACCIP+vbkhAAQAA8Gh7blyXEA4AAA==
   </data>

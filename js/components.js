@@ -83,3 +83,14 @@ Crafty.c('Sword', {
         this.setSpriteName('SwordSprite');
     }
 });
+
+// Torch item
+Crafty.c('Torch', {
+    init: function() {
+        this.requires('Item, SpriteAnimation, TorchSprite');
+        this.setItemName('Torch');
+        this.setSpriteName('TorchSprite');
+        this.reel('Flaming', 1000, 0, 0, 9);
+        this.animate('Flaming', -1);
+    }
+});
