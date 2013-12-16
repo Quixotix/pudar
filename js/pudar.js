@@ -22,8 +22,8 @@ var Pudar = (function (Crafty, jQuery) {
             },
             begin: {
                 name: 'Game',
-                assets: ['img/sprites.png', 'img/gui.png', 'img/terrain-on-sand.png'],
-                map: 'maps/lost-lava.json',
+                assets: ['img/sprites.png', 'img/gui.png', 'img/background.png'],
+                map: 'maps/begin.json',
             }
         }
     };
